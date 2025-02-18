@@ -2,57 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const Drink = require('./models/drink.model.js');
-
+const drinkRoute = require('./routes/drink.route.js');
 const app = express();
 const PORT = 5000;
 
+//Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//Routes
+app.use('/api/drinks', drinkRoute);
 
 app.get('/', (req, res) => {
     res.send('Test');
-});
-
-app.get('/api/drinks', async (req, res) => {
-    try {
-        const drinks = await Drink.find({});
-        res.status(200).json(drinks);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-app.get('/api/drink/:id', async (req, res) => {
-    try {
-        const { id } = req.params;
-        const drink = await Drink.findById(id);
-        res.status(200).json(drink);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-app.post('/api/drinks', async (req, res) => {
-    try {
-        const drink = await Drink.create(req.body);
-        res.status(200).json(drink);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-app.put('/api/drink/:id', async (req, res) => {
-    try {
-        const { id } = req.params;
-        const drink = await Drink.findByIdAndUpdate(id, req.body);
-
-        if (!drink) {
-            return res.status(404).json({ message: "Entry not found." });
-        }
-
-        res.status(200).json(drink);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
 });
 
 async function connectToDB() {
