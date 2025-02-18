@@ -21,9 +21,34 @@ app.get('/api/drinks', async (req, res) => {
     }
 });
 
+app.get('/api/drink/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const drink = await Drink.findById(id);
+        res.status(200).json(drink);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 app.post('/api/drinks', async (req, res) => {
     try {
         const drink = await Drink.create(req.body);
+        res.status(200).json(drink);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+app.put('/api/drink/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const drink = await Drink.findByIdAndUpdate(id, req.body);
+
+        if (!drink) {
+            return res.status(404).json({ message: "Entry not found." });
+        }
+
         res.status(200).json(drink);
     } catch (err) {
         res.status(500).json({ message: err.message });

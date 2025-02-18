@@ -9,13 +9,13 @@ const DrinkSchema = mongoose.Schema(
             type: String, required: true
         },
         category: {
-            type: String, required: true
+            type: String, enum: ['Coffee', 'Tea', 'Juice', 'Frozen', 'Other'], required: true
         },
         size: {
             type: String, enum: ['Extra Small', 'Small', 'Medium', 'Large', 'Extra Large'], required: true
         },
-        temperatureType: {
-            type: String, enum: ['Iced', 'Hot', 'Frozen'], required: true
+        temperature: {
+            type: String, enum: ['Cold', 'Hot'], required: true
         },
         shots: {
             type: Number, default: 0, required: false
