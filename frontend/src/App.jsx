@@ -1,8 +1,11 @@
 import React from 'react'
+import Navigation from './components/Navigation';
 
 const App = () => {
   return (
-    <div className='bg-red-500'>App</div>
+    <>
+      <Navigation />
+    </>
   )
 }
 
