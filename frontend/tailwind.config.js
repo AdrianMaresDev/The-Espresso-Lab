@@ -7,14 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        caramel: "#AD8330",
-        cream: "#E8E7E3",
-        darkBrown: "#39310C",
-        cinnamon: "#6F2112",
-        forest: "#1F3A28"
+        cream: "#DEDBD3",
+        lavender: "#C3A3C6",
+        lavenderhover: "#97769A",
+        grey: "#69666A"
       },
       fontFamily: {
-        josefinSans: ["Josefin Sans", "sans-serif"]
+        poppins: ["Poppins", "sans-serif"]
       }
     },
   },

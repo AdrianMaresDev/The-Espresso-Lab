@@ -1,27 +1,25 @@
-import logo from '../assets/images/dulcelogo.png';
+import logo from '../assets/images/espressolablogo.png';
 
 const Navigation = () => {
     return (
-        <nav className='bg-cream'>
-            <div className='max-w-7xl mx-auto flex justify-between font-semibold'>
-                <div className='flex items-center'>
-                    <img src={logo} alt='Logo Image' className='max-w-40 mr-4' />
-                    <ul className='flex gap-12'>
-                        <li>
-                            <a>HOME</a>
-                        </li>
-                        <li>
-                            <a>RECIPES</a>
-                        </li>
-                        <li>
-                            <a>SEARCH</a>
-                        </li>
-                        <li>
-                            <a>QUIZ</a>
-                        </li>
-                    </ul>
-                </div>
-                <button>LOG IN</button>
+        <nav className='bg-black'>
+            <div className='flex justify-between items-center text-white w-[80%] mx-auto'>
+                <img className='max-w-36' src={logo}></img>
+                <ul className='text-xl flex gap-12'>
+                    <li className='hover:underline underline-offset-8 decoration-lavender'>
+                        <a href='#'>HOME</a>
+                    </li>
+                    <li className='hover:underline underline-offset-8 decoration-lavender'>
+                        <a href='#'>DRINK RECIPES</a>
+                    </li>
+                    <li className='hover:underline underline-offset-8 decoration-lavender'>
+                        <a href='#'>FAVORITES</a>
+                    </li>
+                    <li className='hover:underline underline-offset-8 decoration-lavender'>
+                        <a href='#'>QUIZ</a>
+                    </li>
+                </ul>
+                <button className='bg-lavender hover:bg-lavenderhover hover:text-white transition-colors duration-300 rounded-sm text-black px-4 py-2'>LOG IN</button>
             </div>
         </nav>
     )
