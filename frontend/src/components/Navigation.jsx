@@ -23,9 +23,12 @@ const Navigation = () => {
                 </div>
 
                 <div className='flex items-center'>
-                    <button className='bg-beige text-white border-2 border-beige hover:border-black hover:bg-black transition-colors duration-200 px-4 py-2'>LOG IN</button>
-                    {/*TODO: Add functionality to the search bar*/}
+                    
+                    <a className='mr-4 px-4 py-2 bg-beige hover:text-white border-2 border-beige hover:border-black hover:bg-black transition-colors duration-200' href='#'>LOG IN</a>
                     <input type='text' placeholder='Search Items' className='px-4 py-2 border-2 border-beige'></input>
+                    {/*TODO: Add functionality to the search bar*/}
+                    <button className='bg-beige hover:text-white border-2 border-beige hover:border-black hover:bg-black transition-colors duration-200 px-4 py-2'>SEARCH</button>
+
                 </div>
 
             </div>
