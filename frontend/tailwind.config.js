@@ -7,13 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: "#DEDBD3",
-        lavender: "#C3A3C6",
-        lavenderhover: "#97769A",
-        grey: "#69666A"
+        cream: "#FFF6EE",
+        beige: "#B4A79E",
+        darkGrey: "#2A2A2A",
+        lavender: "#F4DEF8",
+        lavenderHover: "#9827A6"
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"]
+        spartan: ["League Spartan", "sans-serif"]
       }
     },
   },

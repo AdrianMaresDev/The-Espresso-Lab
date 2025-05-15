@@ -4,11 +4,15 @@ const mongoose = require('mongoose');
 const Drink = require('./models/drink.model.js');
 const drinkRoute = require('./routes/drink.route.js');
 const app = express();
+const cors = require('cors');
 const PORT = 5000;
 
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors({
+    origin: 'http://localhost:5173',
+}));
 
 //Routes
 app.use('/api/drinks', drinkRoute);
