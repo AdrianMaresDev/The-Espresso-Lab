@@ -1,7 +1,7 @@
 const Hero = () => {
     return (
-        <section>
-            
+        <section className="bg-darkGrey text-white">
+            <h1>Hero</h1>
         </section>
     )
 };

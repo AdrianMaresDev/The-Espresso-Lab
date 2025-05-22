@@ -11,7 +11,7 @@ export default {
         beige: "#B4A79E",
         darkGrey: "#2A2A2A",
         lavender: "#F4DEF8",
-        lavenderHover: "#9827A6"
+        lavenderHover: "#A376AC"
       },
       fontFamily: {
         spartan: ["League Spartan", "sans-serif"]

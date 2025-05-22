@@ -59,4 +59,13 @@ const deleteDrink = async (req, res) => {
     }
 }
 
-module.exports = { getDrinks, getDrink, createDrink, updateDrink, deleteDrink };
+const getCategory = async (req, res) => {
+    try {
+        const categories = await Drink.distinct('category');
+        res.status(200).json(categories);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+
+module.exports = { getDrinks, getDrink, createDrink, updateDrink, deleteDrink, getCategory };
