@@ -20,6 +20,9 @@ const DrinkSchema = mongoose.Schema(
         shots: {
             type: Number, default: 0, required: false
         },
+        scoops: {
+            type: Number, default: 0, required: false
+        },
         pumps: {
             type: Number, default: 0, required: false
         },

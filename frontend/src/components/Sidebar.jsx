@@ -1,37 +1,30 @@
+import { useEffect, useState } from 'react';
+
 const Sidebar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const res = await fetch('http://localhost:5000/api/drinks/categories');
+        const data = await res.json();
+        setCategories(data);
+      } catch (err) {
+        console.error('Error fetching categories', err);
+      }
+    };
+
+    getCategories();
+  }, []);
+
   return (
     <div className="bg-lavender">
       <ul>
-        <li>
-          <a href="">
-            Coffee
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Tea
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Juice
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Frozen
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Seasonal
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Other
-          </a>
-        </li>
+        {categories.map((category, index) => (
+          <li key={index}>
+            {category}
+          </li>
+        ))}
       </ul>
     </div>
   )
