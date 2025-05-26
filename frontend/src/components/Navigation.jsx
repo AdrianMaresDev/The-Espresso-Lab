@@ -2,7 +2,7 @@ import logo from '../assets/images/lattelablogo.png';
 
 const Navigation = () => {
     return (
-        <nav className='bg-darkGrey border-b-lavender border-b-4'>
+        <nav className='bg-darkGrey'>
 
             <div className='flex justify-between max-w-[90%] mx-auto font-semibold tracking-wide'>
 
